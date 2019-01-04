@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="54px" viewBox="0 0 60 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>round-photo_camera-24px copy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.298177083">
+        <g id="KYC-(Dark)" transform="translate(-257.000000, -926.000000)">
+            <g id="round-photo_camera-24px-copy" transform="translate(252.000000, 921.000000)">
+                <polygon id="Shape" points="0 0 70 0 70 70 0 70"></polygon>
+                <circle id="Oval" fill="#565D7F" fill-rule="nonzero" cx="35" cy="35" r="8.75"></circle>
+                <path d="M58.3333333,11.6666667 L49.0875,11.6666667 L45.4708333,7.72916667 C44.3916667,6.53333333 42.8166667,5.83333333 41.1833333,5.83333333 L28.8166667,5.83333333 C27.1833333,5.83333333 25.6083333,6.53333333 24.5,7.72916667 L20.9125,11.6666667 L11.6666667,11.6666667 C8.45833333,11.6666667 5.83333333,14.2916667 5.83333333,17.5 L5.83333333,52.5 C5.83333333,55.7083333 8.45833333,58.3333333 11.6666667,58.3333333 L58.3333333,58.3333333 C61.5416667,58.3333333 64.1666667,55.7083333 64.1666667,52.5 L64.1666667,17.5 C64.1666667,14.2916667 61.5416667,11.6666667 58.3333333,11.6666667 Z M35,49.5833333 C26.95,49.5833333 20.4166667,43.05 20.4166667,35 C20.4166667,26.95 26.95,20.4166667 35,20.4166667 C43.05,20.4166667 49.5833333,26.95 49.5833333,35 C49.5833333,43.05 43.05,49.5833333 35,49.5833333 Z" id="Shape" fill="#565D7F" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

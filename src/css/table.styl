@@ -1,0 +1,97 @@
+.table
+  display: table
+  width: 100%
+  padding: 0
+  background-color: transparent
+
+// borders
+.table-header
+.table-row
+  background-color: $backgroundLightDarkColor
+
+  & > *
+    border-bottom: 1px solid rgba(0,0,0,0.12)
+    position: relative
+
+  &:last-child
+    & > *
+      border-bottom: 0
+
+.table-header
+  display: table-header-group
+  background-color: transparent
+  color: $textDarkColor
+
+  & > *
+    display: table-cell
+    vertical-align: middle
+    padding: ($elementVSpacing / 2)
+    cursor: default
+    text-transform: uppercase
+
+    &:first-child
+      padding-left: $elementHSpacing !important
+
+    &:last-child
+      padding-right: $elementHSpacing !important
+
+    .asc-desc
+      .asc
+      .desc
+        display: block
+        position: absolute
+        top: 50%
+        right: 15px
+        margin-top: -3px
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 5px 5px 0 5px
+        border-color: $textDarkColor transparent transparent transparent
+
+      .asc
+        border-width: 0 5px 5px 5px
+        border-color: transparent transparent $textDarkColor transparent
+
+.table-row
+  display: table-row
+  transition: all $transitionFast ease-in-out
+
+  & > *
+    display: table-cell
+    height: 60px
+    vertical-align: middle
+    position: relative
+
+    &:first-child
+      padding-left: $elementHSpacing !important
+
+    &:last-child
+      padding-right: $elementHSpacing !important
+
+  &:hover
+    background-color: $accentColor1
+    color: $textColor2
+
+.table-load-more
+  margin-top:  2rem
+  padding: 0 $elementHSpacing
+
+  button
+  .button
+    line-height: 4rem
+    height: auto
+    background-color: $accentColor2
+    width: 100%
+
+.table-row
+  cursor: pointer
+
+.table-cell
+  padding: $spacing * 2
+
+.no-padding
+  padding: $spacing * 2 0 0 !important
+  p
+    padding: 0 $spacing * 5
+

@@ -1,0 +1,89 @@
+header
+  // mShadowed(1.5, $mDropShadowCardColor)
+
+  background-color: $backgroundDarkColor
+  display: table
+  color: $textColor2
+  width: 100%
+  z-index: 1
+  position: relative
+
+  &:after
+    content: 'DRAFT - SUBJECT TO REVISION'
+    position: absolute
+    text-align: center
+    left: 50%
+    transform: translateX(-50%)
+    top: 68px
+    color: #565d7f
+
+  .input.input
+    input
+      color: $textColor2
+      border-color: $textColor2
+
+  .selectize-control
+    .selectize-input
+      color: $textColor2 !important
+      border-color: $textColor2 !important
+
+      .item
+        color: $textColor2 !important
+
+      &:after
+        border-color: $textColor2 transparent transparent !important
+
+  .input.input.input
+    margin: 0
+
+  #org-switcher
+    float: right
+    width: 160px
+    margin: $headerSpacing $elementHSpacing
+
+  #command-bar
+    float:left
+    max-width: 800px
+    width: 100%
+    margin: $headerSpacing $elementHSpacing
+    display: none
+
+    &:before
+      content: '⚲'
+      transform: rotate(45deg) translate(-4px, 10px)
+      position: absolute
+
+    .commands-found
+      position: absolute
+      max-width: 800px
+      width: 100%
+      background-color: $backgroundColor1
+      color: $textColor1
+      box-shadow: 0 1px 3px rgba(0,0,0,.1)
+      cursor: pointer
+      z-index: 100
+
+      .command-found
+        padding: 0 8px
+        height: $elementHeight
+        padding: 0 $inputHPadding
+        line-height: $elementHeight
+
+        &:hover
+          background-color: $selectActiveBackgroundColor1
+          color: $selectActiveColor1
+
+        & > *
+          display: inline-block
+
+  .logo
+    height: $headerElementHeight
+    width: $headerElementHeight
+    margin: $headerSpacing
+    float: left
+
+  .name
+    font-size: 19px
+    margin: $headerSpacing 0
+    float: left
+

@@ -1,0 +1,71 @@
+.form-content.admin-info
+  .form-title.halt
+    h2 HALT TRADING
+  .form-part.halt
+    .form-section.columns
+      button.submit(onclick='{ halt }') HALT <strong>ALL</strong> TRADING
+      button.submit(onclick='{ halt }') HALT <strong>ETH</strong> TRADING
+      button.submit(onclick='{ halt }') HALT <strong>EOS</strong> TRADING
+
+  .form-title
+    h2 Disclosure Scheduler
+  .form-part
+    .form-section
+      .form-group.columns
+        text.input(bind='name', placeholder='Name')
+        text.input(bind='event', placeholder='Event')
+        button Upload Disclosure
+  .form-part
+    .form-section
+      button.submit(onclick='{ showSave }') Save
+      // button(onclick='{ showReset }') Reset
+
+.form-content
+  .form-title
+    h3 Disclosure Schedules
+  hanzo-disclosure-scheduling.m-card.no-padding
+    .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
+    .table-cell { data.get('name') }
+    .table-cell { data.get('event') }
+
+.form-content.admin-info
+  .form-title
+    h2 Automatic Flagging System
+  .form-part
+    .form-section
+      h4 FLAG IF USER MATCHES FOLLOWING:
+      .form-group.columns
+        text.input(bind='name', placeholder='By Name')
+        text.input(bind='ip', placeholder='By IP')
+        text.input(bind='amount', placeholder='By Transaction Size')
+        address-country.flex2.input(bind='country' placeholder='Country')
+        address-state.input(bind='state' country-field='filters.country' placeholder='State')
+  .form-part
+    .form-section
+      button.submit(onclick='{ showSave }') Save
+      // button(onclick='{ showReset }') Reset
+
+.form-content
+  .form-title
+    h3 Automatic Flagging Rules
+  hanzo-account-flagging.m-card.no-padding
+    .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
+    .table-cell { data.get('name') }
+    .table-cell { data.get('ip') }
+    .table-cell { data.get('amount') }
+    .table-cell { data.get('country') }
+    .table-cell { data.get('state') }
+
+daisho-modal.save(class='{ show: showSaveModal }')
+  .modal-title
+    h4(if='{ !loading }') Are you sure you want to save?
+    h4(if='{ loading }') Saving...
+  .modal-section(if='{ !loading }')
+    button(onclick='{ save }') Yes
+    button(onclick='{ cancelModals }') No
+
+daisho-modal.failed(class='{ show: showMessageModal }')
+  .modal-title
+    h4 { message }
+  .modal-section
+    button(onclick='{ cancelModals }') Ok

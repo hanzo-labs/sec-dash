@@ -1,0 +1,36 @@
+.form-content.m-card
+  .form-title.m-card-header
+    h2 Disclosure Information
+  .form-part.m-card-body
+    .form-section
+      readonly.input(bind='id', label='Id')
+      text.input(bind='emailto', label='Email List', placeholder='Leave blank to send to all users')
+      .form-group.columns
+        readonly.input(text='{ utils.date.renderDate(data.get("createdAt")) }', label='Created On')
+        readonly.input(text='{ utils.date.moment(data.get("updatedAt")).fromNow() }', label='Updated On')
+  .form-part.m-card-footer
+    .form-section.columns
+      button.submit(onclick='{ showSave }') Save
+      button(onclick='{ showReset }') Reset
+
+daisho-modal.reset(class='{ show: showResetModal }')
+  .modal-title
+    h4(if='{ !loading }') Are you sure you want to reset?
+    h4(if='{ loading }') Resetting...
+  .modal-section(if='{ !loading }')
+    button(onclick='{ reset }') Yes
+    button(onclick='{ cancelModals }') No
+
+daisho-modal.save(class='{ show: showSaveModal }')
+  .modal-title
+    h4(if='{ !loading }') Are you sure you want to save?
+    h4(if='{ loading }') Saving...
+  .modal-section(if='{ !loading }')
+    button(onclick='{ save }') Yes
+    button(onclick='{ cancelModals }') No
+
+daisho-modal.failed(class='{ show: showMessageModal }')
+  .modal-title
+    h4 { message }
+  .modal-section
+    button(onclick='{ cancelModals }') Ok

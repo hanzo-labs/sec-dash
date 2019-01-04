@@ -1,0 +1,57 @@
+#{ 'yield' }(from='table-header')
+  .header.content.m-card
+    div
+      h2 { data.get(countField) || 'No' } { name } { data.get('count') ? '' : 'Found'  }
+      button(onclick='{ export }') EXPORT
+
+    .filters
+      h4 FILTERS
+      .columns
+        text.input(bind='filters.search' placeholder='Search')
+        button(onclick='{ search }') SEARCH
+      .rows
+        .columns
+          text.input(bind='filters.Protocol' placeholder='Protocol')
+          text.input(bind='filters.TransactionHash' placeholder='TX Hash')
+      .rows
+        .columns
+          text.input(bind='filters.SendingName' placeholder='Sender Name')
+          text.input(bind='filters.SendingAddress' placeholder='Sending Address')
+          address-country.flex2.input(bind='filters.sendingCountry' placeholder='Sending Country')
+          address-state.input(bind='filters.sendingState' country-field='filters.sendingCountry' placeholder='Sending State')
+      .rows
+        .columns
+          text.input(bind='filters.ReceivingName' placeholder='Receiver Name')
+          text.input(bind='filters.ReceivingAddress' placeholder='Receiving Address')
+          address-country.flex2.input(bind='filters.receivingCountry' placeholder='Receiving Country')
+          address-state.input(bind='filters.receivingState' country-field='filters.receivingCountry' placeholder='Receiving State')
+
+#{ 'yield' }(from='table-body')
+  .tables(if='{ data.get(countField) }')
+    daisho-table.m-card.table(
+    table-columns='{ headers }'
+    table-field='{ resultsField }')
+      #{ 'yield' }
+        .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
+        .table-cell { trimToElipsis(data.get('transactionHash')) }
+        .table-cell { data.get('protocol') }
+        .table-cell
+          div { data.get('sendingUserId') }
+          div { data.get('sendingName') }
+          div { trimToElipsis(data.get('sendingAddress')) }
+          div { data.get('sendingState') }, { data.get('sendingCountry') }
+        .table-cell
+          div { data.get('receivingUserId') }
+          div { data.get('receivingName') }
+          div { trimToElipsis(data.get('receivingAddress')) }
+          div { data.get('receivingState') }, { data.get('receivingCountry') }
+        .table-cell { data.get('amount') } { data.get('symbol') }
+        .table-cell { data.get('fee') } { data.get('symbol') }
+    div.m-card.table-load-more
+      .button(
+        class='{ loading: loading }'
+        onclick='{ loadMore }'
+        if='{ hasMore }'
+        disabled='{ loading }'
+      )
+        | { loading ? 'Loading...' : hasMore() ? ('Next ' + moreCount() + ' Results') : 'No More Results' }

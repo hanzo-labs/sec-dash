@@ -1,0 +1,106 @@
+.form-content.user-info
+  .form-part
+    .form-section.columns
+      .form-group.flex3
+        .user-image
+          img(if='{ hasImage() }' riot-src='{ getImage() }')
+          img.small(if='{ !hasImage() }' src='/img/blue-camera.svg')
+      .form-group.rows.align-flex-start.flex2
+        h4 ACCOUNT
+        span Name
+        h1 { data.get('firstName') } { data.get('lastName') }
+        readonly.input(bind='id', label='Id')
+
+        h4 CONTACT INFORMATION
+        readonly.input(bind='email', label='Email')
+        readonly.input(bind='kyc.phone' label='Primary Phone Number')
+        readonly.input(text='{ getAddress1 }' label='Address')
+        readonly.input(text='{ getAddress2 }' style='margin: 0')
+
+      .form-group.rows.align-flex-start.flex2
+        h4 ACCOUNT STATUS
+        div.account-status
+          selection.input(bind='filters.status' placeholder='Status' select-options='{ statusOpts }')
+          .columns.flagged-frozen
+            switch.input(bind='kyc.flagged', label='Flagged')
+            switch.input(bind='kyc.frozen', label='Frozen')
+          .columns.mint-burn
+            button MINT
+            button BURN
+        h4 PERSONAL INFORMATION
+        readonly.input.hideable(bind='kyc.birthdate' label='Birth Date' tabindex='0')
+        readonly.input.hideable(bind='kyc.taxId' label='Tax ID' tabindex='0')
+        div
+          .columns
+            readonly.input(text='{ utils.date.renderDate(data.get("createdAt")) }', label='Date Registered')
+            readonly.input(if='{ isDateApproved() }' text='{ utils.date.renderDate(data.get("kyc.dateApproved")) }', label='Date Approved')
+      // gmap(address='{ getBillingAddress }', map-type-id='roadmap')
+
+.form-content
+  .form-title
+    h3 Documents
+  hanzo-user-documents.m-card.no-padding
+    .table-cell(onclick='{ openImage(k) }') { getName(k) }
+    .table-cell(onclick='{ openImage(k) }')
+      a.white(href='#') View
+    .table-cell(onclick='{ openImage(k) }')
+      a.white(href='#') Download
+
+.form-content
+  .form-title
+    h3 Addresses
+  hanzo-user-addresses.m-card.no-padding
+    .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
+    .table-cell { data.get('blockchain') }
+    .table-cell { data.get('address') }
+    .table-cell { data.get('amount') } UST
+
+.form-content
+  .form-title
+    h3 Transactions
+  hanzo-user-transactions.m-card.no-padding
+    .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
+    .table-cell { data.get('hash') }
+    .table-cell { data.get('blockchain') }
+    .table-cell
+      div { data.get('from.id') }
+      div { data.get('from.name') }
+      div { data.get('from.address') }
+      div { data.get('from.state') }, { data.get('from.country') }
+    .table-cell
+      div { data.get('to.id') }
+      div { data.get('to.name') }
+      div { data.get('to.address') }
+      div { data.get('to.state') }, { data.get('to.country') }
+    .table-cell { data.get('amount') } { data.get('symbol') }
+    .table-cell { data.get('fee') } { data.get('symbol') }
+
+.form-content
+  .form-title
+    h3 Disclosures
+  hanzo-user-disclosures.m-card.no-padding
+    .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
+    .table-cell { data.get('file') }
+    .table-cell { data.get('users') }
+
+daisho-modal.reset(class='{ show: showResetModal }')
+  .modal-title
+    h4(if='{ !loading }') Are you sure you want to reset?
+    h4(if='{ loading }') Resetting...
+  .modal-section(if='{ !loading }')
+    button(onclick='{ reset }') Yes
+    button(onclick='{ cancelModals }') No
+
+daisho-modal.save(class='{ show: showSaveModal }')
+  .modal-title
+    h4(if='{ !loading }') Are you sure you want to save?
+    h4(if='{ loading }') Saving...
+  .modal-section(if='{ !loading }')
+    button(onclick='{ save }') Yes
+    button(onclick='{ cancelModals }') No
+
+daisho-modal.failed(class='{ show: showMessageModal }')
+  .modal-title
+    h4 { message }
+  .modal-section
+    button(onclick='{ cancelModals }') Ok

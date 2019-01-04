@@ -1,0 +1,30 @@
+#{ 'yield' }(from='table-header')
+  .header.content.m-card
+    div
+      h2 { data.get(countField) || 'No' } { name } { data.get('count') ? '' : 'Found'  }
+      button(onclick='{ export }') EXPORT
+
+    .filters
+      h4 FILTERS
+      .columns
+        text.input(bind='filters.search' placeholder='Search')
+        button(onclick='{ search }') SEARCH
+
+#{ 'yield' }(from='table-body')
+  .tables(if='{ data.get(countField) }')
+    daisho-table.m-card.table(
+    table-columns='{ headers }'
+    table-field='{ resultsField }')
+      #{ 'yield' }
+        .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
+        .table-cell { data.get('file') }
+        .table-cell { data.get('users') }
+        .table-cell { data.get('type') }
+    div.m-card.table-load-more
+      .button(
+        class='{ loading: loading }'
+        onclick='{ loadMore }'
+        if='{ hasMore }'
+        disabled='{ loading }'
+      )
+        | { loading ? 'Loading...' : hasMore() ? ('Next ' + moreCount() + ' Results') : 'No More Results' }

@@ -1,0 +1,27 @@
+.form-content.fund-info.columns
+  div
+    .form-title
+      h2 GLOBAL MINT
+
+    .form-part
+      .form-section
+        text.input(bind='mintAmount', placeholder='Mint Percent')
+        button.submit(onclick='{ halt }') MINT
+
+  div
+    .form-title
+      h2 GLOBAL BURN
+
+    .form-part
+      .form-section
+        text.input(bind='burnAmount', placeholder='Burn Percent')
+        button.submit(onclick='{ halt }') BURN
+
+  div
+    .form-title
+      h2 SET NAV
+    .form-part
+      .form-section
+        text.input(bind='nav', placeholder='NAV Value')
+        button.submit(onclick='{ halt }') SAVE
+

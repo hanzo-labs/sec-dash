@@ -1,0 +1,117 @@
+.screen
+  width: 100vw
+  height: 100vh
+  position: absolute
+  left: 0
+  top: 0
+  font-size: $fontSize
+  color: $textColor1
+
+  .content
+    background-color: transparent
+    box-shadow: none
+
+    & > *
+      display: block
+      overflow: visible
+      display: table
+      width: 100%
+      padding $elementVSpacing $elementHSpacing
+      // border-bottom: $elementBorderWidth solid $borderColor2
+
+      &:last-child
+        border-bottom: 0
+
+    .title
+      color: $textColor1
+      background-color: $backgroundColor2
+
+  .header
+    margin-bottom: $spacing * 4
+    overflow: visible
+    background-color: $headerDarkColor
+
+.flex1.flex1.flex1
+  flex: 1
+
+.flex2.flex2.flex2
+  flex: 2
+
+.flex3.flex3.flex3
+  flex: 3
+
+.flex4.flex4.flex4
+  flex: 4
+
+.flex5.flex5.flex5
+  flex: 5
+
+.flex6.flex6.flex6
+  flex: 6
+
+.justify-flex-start.justify-flex-start.justify-flex-start
+  justify-content: flex-start
+
+.justify-flex-center.justify-flex-center.justify-flex-center
+  justify-content: center
+
+.justify-flex-end.justify-flex-end.justify-flex-end
+  justify-content: flex-end
+
+.align-flex-start.align-flex-start.align-flex-start
+  align-items: flex-start
+
+.align-flex-center.align-flex-center.align-flex-center
+  align-items: center
+
+.align-flex-end.align-flex-end.align-flex-end
+  align-items: flex-end
+
+.columns
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+  &.flex-wrap
+  &.wrap
+    flex-wrap: wrap
+
+    & > *
+      flex: initial
+
+  & > *
+    flex: 1
+
+  & > *
+    margin: 0 $spacing * 2
+
+    &:first-child
+      margin-left: 0
+
+    &:last-child
+      margin-right: 0
+
+  +below($phoneWidth)
+    flex-direction: column
+
+.flex-rows
+.rows
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+
+  &.flex-wrap
+  &.wrap
+    flex-wrap: wrap
+
+    & > *
+      flex: initial
+
+  & > *
+    flex: 1
+
+.flex-reset
+  display: table
+  width: 100%
