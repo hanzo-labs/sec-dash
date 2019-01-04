@@ -24,7 +24,7 @@ class HanzoUsers extends Daisho.Views.HanzoDynamicTable
 
   name: 'Users'
 
-  display: 1000
+  display: 100
 
   configs:
     'filter': []
