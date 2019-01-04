@@ -7,11 +7,11 @@
         <g id="Navigation" transform="translate(-24.000000, -23.000000)">
             <g id="Group" transform="translate(24.000000, 23.000000)">
                 <polygon id="Fill-1" fill="#FFFFFF" transform="translate(39.500000, 36.500000) scale(-1, 1) translate(-39.500000, -36.500000) " points="33 43 46 43 46 30 33 30"></polygon>
-                <polygon id="Fill-4" fill="#4C5270" transform="translate(32.500000, 24.500000) scale(-1, 1) translate(-32.500000, -24.500000) " points="19 30 32.0177413 30 46 19 34.877186 19"></polygon>
-                <polygon id="Fill-5" fill="#2C314A" points="6 3.87286878 6.82118424e-13 0 0 36.3686067 6 42"></polygon>
+                <polygon id="Fill-4" fill="#4C5270" transform="translate(32.500000, 24.500000) scale(-1, 1) translate(-32.500000, -24.500000) " points="19 30 32.0177413 30 46 19 34 19"></polygon>
+                <polygon id="Fill-5" fill="#2C314A" points="6 3.87286878 5.1209037e-13 0 6.82121026e-13 37.3983535 6 43"></polygon>
                 <polygon id="Fill-5" fill="#2C314A" transform="translate(26.000000, 31.000000) rotate(-90.000000) translate(-26.000000, -31.000000) " points="38 24 25.9245034 24 14 38 26.9532638 38"></polygon>
-                <polygon id="Fill-2" fill="#FFFFFF" points="6 42 19 42 19 4 6 4"></polygon>
-                <polygon id="Fill-4" fill="#4C5270" transform="translate(9.500000, 2.000000) scale(-1, 1) translate(-9.500000, -2.000000) " points="0 4 13.1656574 4 19 2.96707103e-13 6.33057694 4.54747351e-13"></polygon>
+                <polygon id="Fill-2" fill="#FFFFFF" points="6 43 19 43 19 4 6 4"></polygon>
+                <polygon id="Fill-4" fill="#4C5270" transform="translate(9.500000, 2.000000) scale(-1, 1) translate(-9.500000, -2.000000) " points="0 4 13 4 19 1.70974346e-14 6 0"></polygon>
             </g>
         </g>
     </g>
