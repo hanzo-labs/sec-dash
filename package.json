@@ -38,7 +38,8 @@
     "moment-timezone": "0.5.23",
     "numeral": "^2.0.6",
     "referential": "^0.5.23",
-    "shop.js": "2.2.67"
+    "shop.js": "2.2.67",
+    "web3": "1.0.0-beta.37"
   },
   "repository": "https://github.com/hanzoai/sec-dash",
   "private": true

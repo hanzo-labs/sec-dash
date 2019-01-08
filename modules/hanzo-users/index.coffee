@@ -382,17 +382,17 @@ class HanzoUser extends Daisho.Views.Dynamic
         address += state
 
     if postalCode
-      address += postalCode
+      address += ' ' + postalCode
 
     return address
 
   hasImage: ->
-    return !!@data.get("kyc.documents.1")
+    return !!@data.get('kyc.documents.0')
 
   getImage: ->
-    image = @data.get("kyc.documents.1")
+    image = @data.get('kyc.documents.0')
     if image
-      return @data.get("kyc.documents.1")
+      return @data.get('kyc.documents.0')
 
     return '/img/blue-camera-svg'
 
