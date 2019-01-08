@@ -144,7 +144,7 @@ class HanzoAccountFlagging extends Daisho.Views.HanzoStaticTable
     super(arguments...)
 
   doLoad: ->
-    return !!@data.get('id')
+    return true
 
   list: ->
     return new Promise (resolve, reject)=>
@@ -174,17 +174,6 @@ class HanzoAccountFlagging extends Daisho.Views.HanzoStaticTable
             state: 'ANY'
           }
         ]
-
-#     return @client.user.transactions(@data.get('id')).then (res) =>
-#       vs = []
-#       for k, v of res.data
-#         v.currency = k
-#         vs.push v
-#       return vs
-
-  openImage: ->
-    return =>
-      window.open '/id.jpeg', '_blank'
 
 HanzoAccountFlagging.register()
 
@@ -222,7 +211,7 @@ class HanzoDisclosureScheduling extends Daisho.Views.HanzoStaticTable
     super(arguments...)
 
   doLoad: ->
-    return !!@data.get('id')
+    return true
 
   list: ->
     return new Promise (resolve, reject)=>
@@ -258,17 +247,6 @@ class HanzoDisclosureScheduling extends Daisho.Views.HanzoStaticTable
             event: 'before-annual-meeting'
           }
         ]
-
-#     return @client.user.transactions(@data.get('id')).then (res) =>
-#       vs = []
-#       for k, v of res.data
-#         v.currency = k
-#         vs.push v
-#       return vs
-
-  openImage: ->
-    return =>
-      window.open '/id.jpeg', '_blank'
 
 HanzoDisclosureScheduling.register()
 
