@@ -652,7 +652,7 @@ class HanzoUserTokenTransactions extends Daisho.Views.HanzoStaticTable
     return str.substr(0,16) + '...'
 
   list: ->
-    if @data.get('lastName') == 'Kelling'
+    if @data.get('id') == 'o5HWdQ5Jt6yowb'
       return [
         {
           amount: 3.00
