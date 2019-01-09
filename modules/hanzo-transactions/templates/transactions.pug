@@ -35,13 +35,11 @@
         .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
         .table-cell { trimToElipsis(data.get('transactionHash')) }
         .table-cell { data.get('protocol') }
-        .table-cell
-          div { data.get('sendingUserId') }
+        .table-cell(onclick='{ show ("user", data.get("sendingUserId")) }')
           div { data.get('sendingName') }
           div { trimToElipsis(data.get('sendingAddress')) }
           div { data.get('sendingState') }, { data.get('sendingCountry') }
-        .table-cell
-          div { data.get('receivingUserId') }
+        .table-cell(onclick='{ show ("user", data.get("receivingUserId")) }')
           div { data.get('receivingName') }
           div { trimToElipsis(data.get('receivingAddress')) }
           div { data.get('receivingState') }, { data.get('receivingCountry') }

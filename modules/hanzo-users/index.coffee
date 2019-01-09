@@ -110,7 +110,7 @@ class HanzoUsers extends Daisho.Views.HanzoDynamicTable
     email = @data.get 'filters.email'
 
     if email
-      qs.push "Email = '" + email + "'"
+      qs.push "EmailPartials = '" + email + "'"
 
     taxId = @data.get 'filters.taxId'
 
