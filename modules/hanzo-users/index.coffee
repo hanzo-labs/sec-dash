@@ -11,6 +11,10 @@ import css from './css/app.styl'
 import ShippingAddressState from 'shop.js/src/controls/checkout/shippingaddress-state'
 import ShippingAddressCountry from 'shop.js/src/controls/checkout/shippingaddress-country'
 
+trueFalse =
+  true: 'True'
+  false: 'False'
+
 statusOpts =
   approved:  'Approved'
   denied:    'Denied'
@@ -37,6 +41,8 @@ class HanzoUsers extends Daisho.Views.HanzoDynamicTable
     price: true
     listPrice: true
     inventoryCost: true
+
+  trueFalse: trueFalse
 
   statusOpts: statusOpts
 
@@ -111,6 +117,16 @@ class HanzoUsers extends Daisho.Views.HanzoDynamicTable
     if taxId
       qs.push "KYCTaxId = '" + taxId + "'"
 
+    flagged = @data.get 'filters.flagged'
+
+    if flagged
+      qs.push "KYCFlagged = '" + flagged + "'"
+
+    frozen = @data.get 'filters.frozen'
+
+    if frozen
+      qs.push "KYCFrozen = '" + frozen + "'"
+
     status = @data.get 'filters.status'
 
     if status
@@ -119,12 +135,12 @@ class HanzoUsers extends Daisho.Views.HanzoDynamicTable
     country = @data.get 'filters.country'
 
     if country
-      qs.push "KYCCountryCode = '" + country + "'"
+      qs.push "KYCAddressCountryCode = '" + country + "'"
 
     state = @data.get 'filters.state'
 
     if state
-      qs.push "KYCStateCode = '" + state + "'"
+      qs.push "KYCAddressStateCode = '" + state + "'"
 
     @data.set 'facets.query', qs.join ' AND '
 

@@ -24,6 +24,8 @@
           text.input(bind='filters.lastName' placeholder='Last Name')
           text.input(bind='filters.email' placeholder='Email')
           text.input(bind='filters.taxId' placeholder='Tax ID')
+          selection.input(bind='filters.flagged' placeholder='Flagged' select-options='{ trueFalse }')
+          selection.input(bind='filters.frozen' placeholder='Frozen' select-options='{ trueFalse }')
           selection.input(bind='filters.status' placeholder='Status' select-options='{ statusOpts }')
           address-country.flex2.input(bind='filters.country' placeholder='Country')
           address-state.input(bind='filters.state' country-field='filters.country' placeholder='State')
@@ -39,8 +41,7 @@
         .table-cell(onclick='{ show("user", data.get("id")) }') { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
         .table-cell(onclick='{ show("user", data.get("id")) }') { data.get('email') }
         .table-cell(onclick='{ show("user", data.get("id")) }') { data.get('firstName') + ' ' + data.get('lastName') }
-        .table-cell(onclick='{ show("user", data.get("id")) }')
-          img(src='/img/flag.svg' if='{ !!data.get("kyc.flagged") }')
+        .table-cell(onclick='{ show("user", data.get("id")) }') { !!data.get('kyc.flagged') }
         .table-cell(onclick='{ show("user", data.get("id")) }') { !!data.get('kyc.frozen') }
         .table-cell(onclick='{ show("user", data.get("id")) }') { data.get('kyc.status') }
         .table-cell(onclick='{ show("user", data.get("id")) }') { getJurisdiction(data.get('kyc.address.state'), data.get('kyc.address.country')) }

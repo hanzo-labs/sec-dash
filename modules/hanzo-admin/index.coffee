@@ -233,11 +233,6 @@ class HanzoDisclosureScheduling extends Daisho.Views.HanzoStaticTable
           }
           {
             createdOn: '10-10-2018'
-            name: 'Transaction Confirmation'
-            event: 'transaction-confirmed'
-          }
-          {
-            createdOn: '10-10-2018'
             name: 'Privacy Notice'
             event: 'start-of-year'
           }
