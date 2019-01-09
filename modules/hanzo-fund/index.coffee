@@ -101,6 +101,83 @@ class HanzoFund extends Daisho.Views.Dynamic
 
 HanzoFund.register()
 
+class HanzoDailies extends Daisho.Views.HanzoStaticTable
+  tag: 'hanzo-dailies'
+
+  display: 100
+
+  name: 'Daily Fund Statistics'
+
+  # count field name
+  countField: 'dailies.count'
+
+  # results field name
+  resultsField: 'dailies.results'
+
+  # table header configuration
+  headers: [
+    # {
+    #   name: 'Image'
+    #   field: 'Slug'
+    # },
+    {
+      name: 'Date'
+    },
+    {
+      name: 'Total Supply'
+    },
+    {
+      name: 'Total Value'
+    },
+    {
+      name: 'NAV'
+    },
+  ]
+
+  init: ->
+    super(arguments...)
+
+  doLoad: ->
+    return true
+
+  list: ->
+    return new Promise (resolve, reject)=>
+      resolve [
+          {
+            date: '10-11-2018 16:58Z'
+            supply: 1e11 + 54309
+            nav: 100
+          }
+          {
+            date: '10-10-2018 17:02Z'
+            supply: 1e11 + 59359
+            nav: 102
+          }
+          {
+            date: '10-9-2018 17:01Z'
+            supply: 1e11 + 32412
+            nav: 100
+          }
+          {
+            date: '10-8-2018 16:59Z'
+            supply: 1e11 + 3432
+            nav: 100
+          }
+          {
+            date: '10-7-2018 17:01Z'
+            supply: 1e11 + 21
+            nav: 100
+          }
+
+          {
+            date: '10-6-2018 17:00'
+            supply: 1e11 - 843
+            nav: 99
+          }
+        ]
+
+HanzoDailies.register()
+
 export default class Fund
   constructor: (daisho, ps, ms, cs)->
     ps.register 'fund',

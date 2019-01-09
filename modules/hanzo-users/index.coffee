@@ -454,22 +454,22 @@ class HanzoUserDisclosures extends Daisho.Views.HanzoStaticTable
     return new Promise (resolve, reject)=>
       resolve [
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             file: 'Summary-2018-09-30.pdf'
             users: 'all'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             file: 'Summary-2018-06-30.pdf'
             users: 'all'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             file: 'Summary-2018-03-30.pdf'
             users: 'all'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             file: 'PersonalizedSummary-2018-06-30.pdf'
             users: 'David Tai, Zach Kelling'
           }
@@ -591,11 +591,11 @@ class HanzoUserAddresses extends Daisho.Views.HanzoStaticTable
           {
             address:'0xF2FcCC0198fc6b39246Bd91272769D46d2F9D43b', blockchain: 'Ethereum Ropsten Testnet'
             amount: '2000'
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
           }
           {
             address:'EOS5acgkXtdpGF4LNVMK6LryrYNmAyh9yvwppThNkHEMZa4Z6kzPn', blockchain: 'EOS Testnet'
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             amount: '100'
           }
         ]
@@ -680,7 +680,7 @@ class HanzoUserTransactions extends Daisho.Views.HanzoStaticTable
             amount: 24332
             fee: 0.0001
             symbol: 'UST'
-            createdOn: '10-10-2018',
+            createdAt: '10-10-2018',
           }
           {
             hash:'0xaa8809...'
@@ -700,7 +700,7 @@ class HanzoUserTransactions extends Daisho.Views.HanzoStaticTable
             amount: 1000
             fee: 0.0001
             symbol: 'UST'
-            createdOn: '9-31-2018',
+            createdAt: '9-31-2018',
           }
           {
             hash:'0xe765d5...'
@@ -720,7 +720,7 @@ class HanzoUserTransactions extends Daisho.Views.HanzoStaticTable
             amount: 100
             fee: 0.0001
             symbol: 'UST'
-            createdOn: '9-30-2018',
+            createdAt: '9-30-2018',
           }
         ]
 

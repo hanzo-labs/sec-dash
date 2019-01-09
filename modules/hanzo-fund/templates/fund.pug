@@ -25,3 +25,13 @@
         text.input(bind='nav', placeholder='NAV Value')
         button.submit(onclick='{ halt }') SAVE
 
+.form-content
+  .form-title
+    h3 NAVs
+  hanzo-dailies.m-card.no-padding
+    .table-cell { utils.date.renderDate(data.get('date'), yyyymmddhhmmss) }
+    .table-cell { data.get('supply') }
+    .table-cell { utils.currency.renderCurrency('usd', data.get('nav') * data.get('supply')) }
+    .table-cell { utils.currency.renderCurrency('usd', data.get('nav')) }
+
+

@@ -150,7 +150,7 @@ class HanzoAccountFlagging extends Daisho.Views.HanzoStaticTable
     return new Promise (resolve, reject)=>
       resolve [
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name: 'ANY'
             ip: 'ANY'
             amount: 'ANY'
@@ -158,7 +158,7 @@ class HanzoAccountFlagging extends Daisho.Views.HanzoStaticTable
             state: 'ANY'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name: 'ANY'
             ip: 'ANY'
             amount: 'ANY'
@@ -166,7 +166,7 @@ class HanzoAccountFlagging extends Daisho.Views.HanzoStaticTable
             state: 'ANY'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name: 'ANY'
             ip: 'ANY'
             amount: '$1,000,000,000.01'
@@ -217,27 +217,27 @@ class HanzoDisclosureScheduling extends Daisho.Views.HanzoStaticTable
     return new Promise (resolve, reject)=>
       resolve [
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name:  'Prospectus'
             event: 'registration-confirmed'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name: 'Account Statement'
             event: 'end-of-quarter'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name: 'Transaction Confirmation'
             event: 'transaction-confirmed'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name: 'Privacy Notice'
             event: 'start-of-year'
           }
           {
-            createdOn: '10-10-2018'
+            createdAt: '10-10-2018'
             name: 'Proxy Notice'
             event: 'before-annual-meeting'
           }
