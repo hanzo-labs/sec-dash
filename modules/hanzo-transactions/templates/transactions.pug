@@ -42,7 +42,7 @@
         .table-cell(onclick='{ show ("user", data.get("receivingUserId")) }')
           div { data.get('receivingName') }
           div { trimToElipsis(data.get('receivingAddress')) }
-          div { data.get('receivingState') }, { data.get('receivingCountry') }
+          div { data.get('sendingState') }, { data.get('sendingCountry') }
         .table-cell { data.get('amount') } { data.get('symbol') }
         .table-cell { data.get('fee') } { data.get('symbol') }
     div.m-card.table-load-more

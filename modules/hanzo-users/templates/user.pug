@@ -58,20 +58,18 @@
 .form-content
   .form-title
     h3 Transactions
-  hanzo-user-transactions.m-card.no-padding
+  hanzo-user-token-transactions.m-card.no-padding
     .table-cell { utils.date.renderDate(data.get('createdAt'), yyyymmddhhmmss) }
-    .table-cell { data.get('hash') }
-    .table-cell { data.get('blockchain') }
-    .table-cell
-      div { data.get('from.id') }
-      div { data.get('from.name') }
-      div { data.get('from.address') }
-      div { data.get('from.state') }, { data.get('from.country') }
-    .table-cell
-      div { data.get('to.id') }
-      div { data.get('to.name') }
-      div { data.get('to.address') }
-      div { data.get('to.state') }, { data.get('to.country') }
+    .table-cell { trimToElipsis(data.get('transactionHash')) }
+    .table-cell { data.get('protocol') }
+    .table-cell(onclick='{ show ("user", data.get("sendingUserId")) }')
+      div { data.get('sendingName') }
+      div { trimToElipsis(data.get('sendingAddress')) }
+      div { data.get('sendingState') }, { data.get('sendingCountry') }
+    .table-cell(onclick='{ show ("user", data.get("receivingUserId")) }')
+      div { data.get('receivingName') }
+      div { trimToElipsis(data.get('receivingAddress')) }
+      div { data.get('sendingState') }, { data.get('sendingCountry') }
     .table-cell { data.get('amount') } { data.get('symbol') }
     .table-cell { data.get('fee') } { data.get('symbol') }
 

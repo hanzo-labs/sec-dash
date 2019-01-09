@@ -45,9 +45,6 @@ class Hanzotransactions extends Daisho.Views.HanzoDynamicTable
     {
       name: 'Amount'
     }
-    {
-      name: 'Fees'
-    }
   ]
 
   openFilter: false

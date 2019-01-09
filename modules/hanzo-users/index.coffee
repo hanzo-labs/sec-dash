@@ -609,6 +609,54 @@ class HanzoUserAddresses extends Daisho.Views.HanzoStaticTable
 
 HanzoUserAddresses.register()
 
+class HanzoUserTokenTransactions extends Daisho.Views.HanzoStaticTable
+  tag: 'hanzo-user-token-transactions'
+
+  display: 100
+
+  name: 'Transactions'
+
+  # table header configuration
+  headers: [
+    # {
+    #   name: 'Image'
+    #   field: 'Slug'
+    # },
+    {
+      name: 'Created On'
+    },
+    {
+      name: 'Hash'
+    },
+    {
+      name: 'Protocol'
+    },
+    {
+      name: 'From'
+    },
+    {
+      name: 'To'
+    }
+    {
+      name: 'Amount'
+    }
+  ]
+
+  init: ->
+    super
+
+  doLoad: ->
+    return !!@data.get('id')
+
+  trimToElipsis: (str)->
+    return str.substr(0,16) + '...'
+
+  list: ->
+    return @client.user.tokentransactions(@data.get('id')).then (res) =>
+      return res ? []
+
+HanzoUserTokenTransactions.register()
+
 class HanzoUserTransactions extends Daisho.Views.HanzoStaticTable
   tag: 'hanzo-user-transactions'
 
