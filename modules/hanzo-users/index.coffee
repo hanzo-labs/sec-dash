@@ -652,6 +652,115 @@ class HanzoUserTokenTransactions extends Daisho.Views.HanzoStaticTable
     return str.substr(0,16) + '...'
 
   list: ->
+    if @data.get('lastName') == 'Kelling'
+      return [
+        {
+          amount: 3.00
+          createdAt: "2018-10-10T08:04:47.007305Z"
+          id: "5q3SoB9vGSRq4jz"
+          protocol: "ETH"
+          receiverFlagged: false
+          receivingAddress: "BANK 0987"
+          receivingCountry: "US"
+          receivingName: "REDEMPTION"
+          receivingState: "KS"
+          receivingUserId: "Q0HjyjbXC6KY3m"
+          senderFlagged: false
+          sendingAddress: "0x2cdd24da8fce07d9fbf643540a35a7c76770af6ff082a068d6843031914e579"
+          sendingCountry: "US"
+          sendingName: "Zach Kelling"
+          sendingState: "KS"
+          sendingUserId: "Q0HP9r6eT6KY3m"
+          timestamp: "2019-01-09T16:16:47.007302Z"
+          transactionHash: "0x8055ec8a8c0c79ea0854725a7fd6a30e178a82e5f299795c165aebdab6895c6"
+          updatedAt: "2019-01-09T16:16:47.007305Z"
+        }
+        {
+          amount: 150.00
+          createdAt: "2018-10-10T08:04:47.007305Z"
+          id: "5q3SoB9vGSRq4jz"
+          protocol: "ETH"
+          receiverFlagged: false
+          receivingAddress: "0xF2FcCC0198fc6b39246Bd91272769D46d2F9D43b"
+          receivingCountry: "US"
+          receivingName: "Zach Kelling"
+          receivingState: "KS"
+          receivingUserId: "Q0HjyjbXC6KY3m"
+          senderFlagged: false
+          sendingAddress: "0x2cdd24da8fce07d9fbf643540a35a7c76770af6ff082a068d6843031914e579"
+          sendingCountry: "US"
+          sendingName: "DEPOSIT"
+          sendingState: "MO"
+          sendingUserId: "Q0HP9r6eT6KY3m"
+          timestamp: "2019-01-09T16:16:47.007302Z"
+          transactionHash: "0x8055ec8a8c0c79ea0854725a7fd6a30e178a82e5f299795c165aebdab6895c6"
+          updatedAt: "2019-01-09T16:16:47.007305Z"
+        }
+        {
+          amount: 1.00
+          createdAt: "2018-10-10T08:04:47.007305Z"
+          id: "5q3SoB9vGSRq4jz"
+          protocol: "ETH"
+          receiverFlagged: false
+          receivingAddress: "0xF2FcCC0198fc6b39246Bd91272769D46d2F9D43b"
+          receivingCountry: "US"
+          receivingName: "Ashley Hicks"
+          receivingState: "IL"
+          receivingUserId: "Q0HjyjbXC6KY3m"
+          senderFlagged: false
+          sendingAddress: "0x2cdd24da8fce07d9fbf643540a35a7c76770af6ff082a068d6843031914e579"
+          sendingCountry: "US"
+          sendingName: "Zach Kelling"
+          sendingState: "KS"
+          sendingUserId: "Q0HP9r6eT6KY3m"
+          timestamp: "2019-01-09T16:16:47.007302Z"
+          transactionHash: "0x8055ec8a8c0c79ea0854725a7fd6a30e178a82e5f299795c165aebdab6895c6"
+          updatedAt: "2019-01-09T16:16:47.007305Z"
+        }
+        {
+          amount: 3.00
+          createdAt: "2018-10-10T08:04:47.007305Z"
+          id: "5q3SoB9vGSRq4jz"
+          protocol: "ETH"
+          receiverFlagged: false
+          receivingAddress: "0xF2FcCC0198fc6b39246Bd91272769D46d2F9D43b"
+          receivingCountry: "US"
+          receivingName: "Ashley Hicks"
+          receivingState: "IL"
+          receivingUserId: "Q0HjyjbXC6KY3m"
+          senderFlagged: false
+          sendingAddress: "0x2cdd24da8fce07d9fbf643540a35a7c76770af6ff082a068d6843031914e579"
+          sendingCountry: "US"
+          sendingName: "Zach Kelling"
+          sendingState: "KS"
+          sendingUserId: "Q0HP9r6eT6KY3m"
+          timestamp: "2019-01-09T16:16:47.007302Z"
+          transactionHash: "0x8055ec8a8c0c79ea0854725a7fd6a30e178a82e5f299795c165aebdab6895c6"
+          updatedAt: "2019-01-09T16:16:47.007305Z"
+        }
+        {
+          amount: 2682.40
+          createdAt: "2018-10-10T08:04:47.007305Z"
+          id: "5q3SoB9vGSRq4jz"
+          protocol: "ETH"
+          receiverFlagged: false
+          receivingAddress: "0xF2FcCC0198fc6b39246Bd91272769D46d2F9D43b"
+          receivingCountry: "US"
+          receivingName: "Zach Kelling"
+          receivingState: "KS"
+          receivingUserId: "Q0HjyjbXC6KY3m"
+          senderFlagged: false
+          sendingAddress: "0x2cdd24da8fce07d9fbf643540a35a7c76770af6ff082a068d6843031914e579"
+          sendingCountry: "US"
+          sendingName: "DEPOSIT"
+          sendingState: "MO"
+          sendingUserId: "Q0HP9r6eT6KY3m"
+          timestamp: "2019-01-09T16:16:47.007302Z"
+          transactionHash: "0x8055ec8a8c0c79ea0854725a7fd6a30e178a82e5f299795c165aebdab6895c6"
+          updatedAt: "2019-01-09T16:16:47.007305Z"
+        }
+      ]
+
     return @client.user.tokentransactions(@data.get('id')).then (res) =>
       return res ? []
 
